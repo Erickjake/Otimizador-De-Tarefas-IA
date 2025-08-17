@@ -11,7 +11,7 @@ export async function getTaskSuggestions(
     if (!response.ok) throw new Error("Erro ao chamar API interna");
 
     const data = await response.json();
-    return data.suggestions;
+    return data.suggestions; // <- já vem como array do backend
   } catch (error) {
     console.error("Falha ao obter sugestões da IA:", error);
     return [];

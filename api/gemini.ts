@@ -35,10 +35,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const suggestions = data.candidates[0].content.parts[0].text;
 
     return res.status(200).json({ suggestions: JSON.parse(suggestions) });
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      return res.status(500).json({ error: error.message });
-    }
-    return res.status(500).json({ error: "Erro desconhecido" });
+  } catch (error: any) {
+    return res.status(500).json({ error: error.message });
   }
 }
