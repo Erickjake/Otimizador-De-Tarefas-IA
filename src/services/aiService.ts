@@ -2,7 +2,7 @@ export async function getTaskSuggestions(
   mainTaskTitle: string
 ): Promise<string[]> {
   try {
-    const response = await fetch("/api/gemini", {
+    const response = await fetch("api/gemini.ts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ mainTaskTitle }),
